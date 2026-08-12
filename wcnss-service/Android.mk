@@ -21,11 +21,11 @@ LOCAL_HEADER_LIBRARIES += libmdmdetect_headers
 LOCAL_SHARED_LIBRARIES += libmdmdetect
 LOCAL_HEADER_LIBRARIES += libril-qc-qmi-services-headers
 else
-LOCAL_CFLAGS += -DWCNSS_QMI
 LOCAL_SHARED_LIBRARIES += libdl
 ifeq ($(TARGET_PROVIDES_WCNSS_QMI),true)
 LOCAL_CFLAGS += -DWCNSS_QMI_OSS
 else
+LOCAL_CFLAGS += -DWCNSS_QMI
 LOCAL_SRC_FILES += wcnss_qmi_client.c missing_qmi_client_api.c
 LOCAL_CFLAGS += -DWCNSS_QMI_PRIVATE
 endif #TARGET_PROVIDES_WCNSS_QMI
